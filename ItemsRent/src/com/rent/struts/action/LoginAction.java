@@ -37,14 +37,12 @@ public class LoginAction extends BaseAction {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		LoginForm loginForm = (LoginForm) form;
-		String username=loginForm.getUsername();
-		String password=loginForm.getPassword();
-		int age=loginForm.getAge();
-		String sex=loginForm.getBoy()+loginForm.getGirl();
+		String username=loginForm.getUser_name();
+		String password=loginForm.getUser_password();
 		ActionForward forward=mapping.getInputForward();
 		IUserService service=(IUserService)getBean("userService");
 		User userFormDB =service.getUserByUsername(username);
-		if(userFormDB.getPassword().equals(password)){
+		if(userFormDB.getUser_password().equals(password)){
 			forward=mapping.findForward("suc");
 			
 		}

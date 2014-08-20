@@ -22,19 +22,11 @@ public class LoginForm extends ActionForm {
 	 */
 
 	/** username property */
-	private String username;
+	private String user_name;
 
-	/** girl property */
-	private String girl;
-
-	/** age property */
-	private Integer age;
-
-	/** boy property */
-	private String boy;
 
 	/** password property */
-	private String password;
+	private String user_password;
 
 	/*
 	 * Generated Methods
@@ -61,83 +53,25 @@ public class LoginForm extends ActionForm {
 		// TODO Auto-generated method stub
 	}
 
+	public String getUser_name() {
+		return user_name;
+	}
+
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
+	}
+
+	public String getUser_password() {
+		return user_password;
+	}
+
+	public void setUser_password(String user_password) {
+		this.user_password = user_password;
+	}
+
 	/** 
 	 * Returns the username.
 	 * @return String
 	 */
-	public String getUsername() {
-		return username;
-	}
-
-	/** 
-	 * Set the username.
-	 * @param username The username to set
-	 */
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	/** 
-	 * Returns the girl.
-	 * @return String
-	 */
-	public String getGirl() {
-		return girl;
-	}
-
-	/** 
-	 * Set the girl.
-	 * @param girl The girl to set
-	 */
-	public void setGirl(String girl) {
-		this.girl = girl;
-	}
-
-	/** 
-	 * Returns the age.
-	 * @return Integer
-	 */
-	public Integer getAge() {
-		return age;
-	}
-
-	/** 
-	 * Set the age.
-	 * @param age The age to set
-	 */
-	public void setAge(Integer age) {
-		this.age = age;
-	}
-
-	/** 
-	 * Returns the boy.
-	 * @return String
-	 */
-	public String getBoy() {
-		return boy;
-	}
-
-	/** 
-	 * Set the boy.
-	 * @param boy The boy to set
-	 */
-	public void setBoy(String boy) {
-		this.boy = boy;
-	}
-
-	/** 
-	 * Returns the password.
-	 * @return String
-	 */
-	public String getPassword() {
-		return password;
-	}
-
-	/** 
-	 * Set the password.
-	 * @param password The password to set
-	 */
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	
 }
