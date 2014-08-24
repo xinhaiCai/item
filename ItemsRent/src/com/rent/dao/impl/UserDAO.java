@@ -24,9 +24,7 @@ import com.rent.dao.IUserDAO;
 public class UserDAO extends HibernateDaoSupport implements IUserDAO{
 	private static final Log log = LogFactory.getLog(UserDAO.class);
 	// property constants
-	public static final String USERNAME = "username";
-	public static final String SEX = "sex";
-	public static final String AGE = "age";
+	public static final String USERNAME = "user_name";
 
 	protected void initDao() {
 		// do nothing
@@ -54,22 +52,25 @@ public class UserDAO extends HibernateDaoSupport implements IUserDAO{
 		}
 	}
 
-	public User findById(java.lang.String id) {
-		log.debug("getting User instance with id: " + id);
-		try {
-			User instance = (User) getHibernateTemplate().get(
-					"com.bell.user.User", id);
-			return instance;
+	public User findById(java.lang.String user_id) {
+		log.debug("getting User instance with id: " + user_id);
+		try{
+		List list = super.getHibernateTemplate().find(
+				"from User as u where u.user_id=?", user_id);
+		if (list.size() > 0) {
+			return (User) list.get(0);
+		}
+		return null;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
 			throw re;
 		}
 	}
 
-	public List findByExample(User instance) {
+	public List<User> findByExample(User instance) {
 		log.debug("finding User instance by example");
 		try {
-			List results = getHibernateTemplate().findByExample(instance);
+			List<User> results = getHibernateTemplate().findByExample(instance);
 			log.debug("find by example successful, result size: "
 					+ results.size());
 			return results;
@@ -79,7 +80,7 @@ public class UserDAO extends HibernateDaoSupport implements IUserDAO{
 		}
 	}
 
-	public List findByProperty(String propertyName, Object value) {
+	public List<User> findByProperty(String propertyName, Object value) {
 		log.debug("finding User instance with property: " + propertyName
 				+ ", value: " + value);
 		try {
@@ -92,15 +93,7 @@ public class UserDAO extends HibernateDaoSupport implements IUserDAO{
 		}
 	}
 
-	public List findBySex(Object sex) {
-		return findByProperty(SEX, sex);
-	}
-
-	public List findByAge(Object age) {
-		return findByProperty(AGE, age);
-	}
-
-	public List findAll() {
+	public List<User> findAll() {
 		log.debug("finding all User instances");
 		try {
 			String queryString = "from User";
@@ -150,8 +143,7 @@ public class UserDAO extends HibernateDaoSupport implements IUserDAO{
 	}
 
 	@Override
-	public List findByUsername(Object username) {
-		// TODO Auto-generated method stub
-		return findByProperty(USERNAME, username);
+	public List<User> findByUsername(Object user_name) {
+		return findByProperty(USERNAME, user_name);
 	}
 }

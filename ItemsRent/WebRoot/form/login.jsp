@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <%
@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <title>My JSP 'login.jsp' starting page</title>
     
-	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="pragma" content="no-cache" charset="utf-8">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
@@ -25,13 +25,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  <jsp:include page="../head.jsp" />
     <html:form action="/login">
-    username:<html:text property="username"/><html:errors property="username"/><br/>
-    password:<html:password property="password"/><html:errors property="password"/><br/>
-    age:<html:text property="age"></html:text><html:errors property="age"/><br/>
-    girl:<html:radio property="girl" value="girl"></html:radio>
-    boy:<html:radio property="boy" value="boy"></html:radio>
+    	用户账号:<html:text property="user_id"/><html:errors property="user_id"/><br/>
+    	 用户密码:<html:password property="user_password"/><html:errors property="user_password"/><br/>
+
     <html:submit/><html:cancel/>
     </html:form>
+    <jsp:include page="../copyRight.jsp" />
   </body>
 </html>

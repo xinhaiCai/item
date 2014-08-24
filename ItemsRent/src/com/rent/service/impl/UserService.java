@@ -11,15 +11,15 @@ public class UserService implements IUserService {
 	private IUserDAO userDAO;
 	
 	@Override
-	public User getUserById(String id) {
+	public User getUserById(String user_id) {
 		// TODO Auto-generated method stub
-		return userDAO.findById(id);
+		return userDAO.findById(user_id);
 	}
 
 	@Override
-	public User getUserByUsername(String username) {
+	public User getUserByUsername(String user_name) {
 		// TODO Auto-generated method stub
-		List list= userDAO.findByUsername(username);
+		List list= userDAO.findByUsername(user_name);
 		if(list.size()==0){
 			return null;
 		}else{
@@ -37,8 +37,7 @@ public class UserService implements IUserService {
 	
 	@Override
 	public void addUser(User user) {
-		// TODO Auto-generated method stub
-userDAO.save(user);
+		userDAO.save(user);
 	}
 
 }

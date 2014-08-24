@@ -21,10 +21,8 @@ public class LoginForm extends ActionForm {
 	 * Generated fields
 	 */
 
-	/** username property */
-	private String user_name;
-
-
+	/** user_id property */
+	private String user_id;
 	/** password property */
 	private String user_password;
 
@@ -40,7 +38,6 @@ public class LoginForm extends ActionForm {
 	 */
 	public ActionErrors validate(ActionMapping mapping,
 			HttpServletRequest request) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -50,16 +47,8 @@ public class LoginForm extends ActionForm {
 	 * @param request
 	 */
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
-		// TODO Auto-generated method stub
 	}
 
-	public String getUser_name() {
-		return user_name;
-	}
-
-	public void setUser_name(String user_name) {
-		this.user_name = user_name;
-	}
 
 	public String getUser_password() {
 		return user_password;
@@ -69,9 +58,13 @@ public class LoginForm extends ActionForm {
 		this.user_password = user_password;
 	}
 
-	/** 
-	 * Returns the username.
-	 * @return String
-	 */
+	public String getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+
 	
 }

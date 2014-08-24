@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="ItemsRent">
+    <wb-module deploy-name="ItemsRent11">
         <wb-resource deploy-path="/" source-path="/WebRoot"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="/ssh"/>
-        <property name="java-output-path" value="/ItemsRent/WebRoot/WEB-INF/classes"/>
+        <property name="java-output-path" value="/ItemsRent11/WebRoot/WEB-INF/classes"/>
+        <property name="context-root" value="/ItemsRent"/>
     </wb-module>
 </project-modules>

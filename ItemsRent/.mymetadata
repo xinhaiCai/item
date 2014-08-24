@@ -3,7 +3,7 @@
   type="WEB"
   name="ItemsRent"
   id="myeclipse.1407640735140"
-  context-root="/ssh"
+  context-root="/ItemsRent"
   j2ee-spec="6.0"
   archive="ItemsRent.war">
   <attributes>

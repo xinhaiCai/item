@@ -6,6 +6,6 @@ import com.rent.bean.User;
 
 public interface IUserDAO {
 	public User findById(String id);
-	public List findByUsername(Object username);
+	public List findByUsername(Object user_name);
 	public void save(User user);
 }
